@@ -4,7 +4,6 @@ import { geistMono, geistSans } from "../lib/font";
 import { ChildElement } from "../lib/type-definations";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import DashboardHero from "../components/DashboardHero";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,10 +20,7 @@ export default function RootLayout({ children }: ChildElement) {
         <main>
           <div>
             <Sidebar />
-            <div>
-              <DashboardHero />
-              {children}
-            </div>
+            <div>{children}</div>
           </div>
         </main>
       </body>
