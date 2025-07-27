@@ -2,9 +2,12 @@ import DashboardHero from "../components/DashboardHero";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full bg-white p-6">
       <DashboardHero />
-      <p>main page goes here</p>
+      <div>
+        <h3>Trip Itineries</h3>
+        <p>Your trip itinerires are placed here</p>
+      </div>
     </div>
   );
 }

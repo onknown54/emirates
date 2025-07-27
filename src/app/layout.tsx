@@ -14,13 +14,13 @@ export default function RootLayout({ children }: ChildElement) {
   return (
     <html lang="en" className="h-[100vh] w-[100vw] overflow-hidden">
       <body
-        className={`bg-gray h-full w-full overflow-x-hidden antialiased ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-gray h-full w-full overflow-hidden antialiased ${geistSans.variable} ${geistMono.variable}`}
       >
         <Navbar />
         <main>
-          <div>
+          <div className="flex h-[89vh] overflow-hidden">
             <Sidebar />
-            <div>{children}</div>
+            <div className="w-full px-6 py-10">{children}</div>
           </div>
         </main>
       </body>

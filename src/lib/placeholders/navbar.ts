@@ -23,7 +23,7 @@ export const NavLeftLinks = [
   {
     ...imageDimension,
     alt: "",
-    navTitle: "Commission for life",
+    navTitle: "Commission",
     icon: "/icons/hand-coins.svg",
   },
 ];
