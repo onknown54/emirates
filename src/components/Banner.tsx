@@ -12,7 +12,7 @@ export default function Banner() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-10">
         <div>
           <p className="text-xs">21 March 2024 - 21 April 2024</p>
           <h3 className="text-lg font-bold">Bahamas Family Trip</h3>
