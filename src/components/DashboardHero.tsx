@@ -1,5 +1,6 @@
+import { StatusCardType } from "../lib/type-definations";
 import Banner from "./Banner";
-import { StatusCard, StatusCardType } from "./cards";
+import { StatusCard } from "./cards";
 
 export default function DashboardHero() {
   return (

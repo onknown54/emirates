@@ -1,40 +1,8 @@
 "use client";
-import { ComponentType, SVGProps } from "react";
-import {
-  XMarkIcon,
-  ClockIcon,
-  BoltIcon,
-  WifiIcon,
-  MusicalNoteIcon,
-  ComputerDesktopIcon,
-} from "@heroicons/react/24/outline";
-
-type AirportPoint = {
-  code: string;
-  time: string;
-  date: string;
-};
-
-type Facility = {
-  label: string;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
-};
-
-export type FlightCardProps = {
-  airline: string;
-  flightNumber: string;
-  cabinTag?: string;
-  depart: AirportPoint;
-  arrive: AirportPoint;
-  duration: string;
-  isDirect?: boolean;
-  price: number;
-  currency?: string;
-  currencyDisplay?: "symbol" | "code" | "name";
-  facilities?: Facility[];
-  onRemove?: () => void;
-  onEdit?: () => void;
-};
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Divider, DurationBadge, TimeBlock } from "src/app/lib/helpers";
+import { defaultFacilities } from "src/app/lib/placeholders/flights.placholder";
+import { FlightCardProps } from "src/app/lib/type-definations/flights.interface";
 
 export default function FlightCard({
   airline,
@@ -125,55 +93,3 @@ export default function FlightCard({
     </div>
   );
 }
-
-/* ---------- helpers ---------- */
-
-function TimeBlock({
-  code,
-  time,
-  date,
-  align = "start",
-}: AirportPoint & { align?: "start" | "end" }) {
-  const alignClass =
-    align === "end" ? "items-end text-right" : "items-start text-left";
-
-  return (
-    <div className={`flex min-w-[90px] flex-col ${alignClass}`}>
-      <span className="text-xl font-semibold text-gray-900">{time}</span>
-      <span className="text-xs text-gray-500">{date}</span>
-      <span className="mt-0.5 text-sm font-medium text-gray-700">{code}</span>
-    </div>
-  );
-}
-
-function Divider() {
-  return <span className="hidden h-6 w-px bg-gray-200 md:block" />;
-}
-
-function DurationBadge({
-  duration,
-  isDirect,
-}: {
-  duration: string;
-  isDirect: boolean;
-}) {
-  return (
-    <div className="flex flex-col items-center">
-      <div className="flex items-center gap-1 text-xs text-gray-500">
-        <ClockIcon className="h-4 w-4" />
-        Duration: {duration}
-      </div>
-      <span className="mt-1 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-600">
-        {isDirect ? "Direct" : "With stops"}
-      </span>
-    </div>
-  );
-}
-
-const defaultFacilities: Facility[] = [
-  { label: "Baggage: 20kg", icon: BoltIcon },
-  { label: "Cabin Baggage: 8kg", icon: BoltIcon },
-  { label: "In flight entertainment", icon: ComputerDesktopIcon },
-  { label: "In flight meal", icon: MusicalNoteIcon },
-  { label: "USB Port", icon: WifiIcon },
-];

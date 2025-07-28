@@ -6,24 +6,7 @@ import {
   StarIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-
-export type ActivityCardProps = {
-  title: string;
-  price: number;
-  dayTag?: string;
-  rating?: number;
-  imageUrl: string;
-  currency?: string;
-  duration?: string;
-  included?: string;
-  dateTime?: string;
-  description?: string;
-  reviewsCount?: number;
-  onDirections?: () => void;
-  onEdit?: () => void;
-  onRemove?: () => void;
-  currencyDisplay?: "symbol" | "code" | "name";
-};
+import { ActivityCardProps } from "src/app/lib/type-definations";
 
 export default function ActivityCard({
   imageUrl,
@@ -42,13 +25,14 @@ export default function ActivityCard({
   onEdit,
   onRemove,
 }: ActivityCardProps) {
-  const fmt = (v: number) =>
-    new Intl.NumberFormat("en-NG", {
+  function formatNumberToCurrency(v: number) {
+    return new Intl.NumberFormat("en-NG", {
       style: "currency",
       currency,
       currencyDisplay,
       minimumFractionDigits: 2,
     }).format(v);
+  }
 
   return (
     <div className="relative flex w-full flex-col overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm">
@@ -112,7 +96,7 @@ export default function ActivityCard({
             {/* Price & Time */}
             <div className="text-right">
               <div className="text-xl font-semibold text-gray-900">
-                {fmt(price)}
+                {formatNumberToCurrency(price)}
               </div>
               {dateTime && (
                 <div className="mt-1 text-xs text-gray-500">{dateTime}</div>

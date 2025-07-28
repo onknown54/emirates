@@ -1,15 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-interface NavlinkProps {
-  icon: string;
-  alt: string;
-  url: string;
-  width: number;
-  height: number;
-  navTitle: string;
-}
+import { NavlinkProps } from "src/app/lib/type-definations";
 
 export function NavLink({
   icon,

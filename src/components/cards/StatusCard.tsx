@@ -1,39 +1,6 @@
 import Link from "next/link";
-
-export enum StatusCardType {
-  ACTIVITIES = "activities",
-  HOTELS = "hotels",
-  FLIGHTS = "flights",
-}
-
-function captaliseText(text: string): string {
-  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-}
-
-const statusCardVariiant = {
-  [StatusCardType.HOTELS]: {
-    url: "/hotels",
-    btnClass: "bg-[#0D6EFD] text-white",
-    className: "bg-[#E7F0FF] text-[#1D2433]",
-    heading: `${captaliseText(StatusCardType.HOTELS)}`,
-  },
-  [StatusCardType.FLIGHTS]: {
-    url: "/flights",
-    btnClass: "bg-white text-[#0D6EFD]",
-    className: "bg-[#0D6EFD] text-white",
-    heading: `${captaliseText(StatusCardType.FLIGHTS)}`,
-  },
-  [StatusCardType.ACTIVITIES]: {
-    url: "/activities",
-    btnClass: "bg-[#0D6EFD]",
-    className: "bg-[#000031] text-white",
-    heading: `${captaliseText(StatusCardType.ACTIVITIES)}`,
-  },
-};
-
-type StatusCardProps = {
-  type: StatusCardType;
-};
+import { statusCardVariiant } from "src/app/lib/placeholders/overview.placeholder";
+import { StatusCardProps } from "src/app/lib/type-definations";
 
 export function StatusCard({ type }: StatusCardProps) {
   const variant = statusCardVariiant[type];

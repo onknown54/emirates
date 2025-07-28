@@ -1,12 +1,10 @@
+import { ActivityListingProps } from "src/app/lib/type-definations";
+
 export function ActivityListing({
   children,
   title,
   className,
-}: {
-  className: string;
-  title: string;
-  children: React.ReactNode;
-}) {
+}: ActivityListingProps) {
   return (
     <section className={`mb-7 ${className}`}>
       <div className="mb-4 flex justify-between px-3 py-2">

@@ -19,7 +19,7 @@ export default function Hotels() {
           facilities={[
             { label: "Pool" },
             { label: "Bar" },
-            { label: "Wi‑Fi", icon: WifiIcon },
+            { label: "WiFi", icon: WifiIcon },
             { label: "Live music", icon: MusicalNoteIcon },
           ]}
           checkIn="20-04-2024"

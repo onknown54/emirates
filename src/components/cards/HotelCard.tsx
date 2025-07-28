@@ -1,43 +1,12 @@
 "use client";
-
 import Image from "next/image";
-import { ComponentType, SVGProps } from "react";
 import {
   XMarkIcon,
   MapPinIcon,
   StarIcon,
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
-
-type Facility = {
-  label: string;
-  icon?: ComponentType<SVGProps<SVGSVGElement>>;
-};
-
-export type HotelCardProps = {
-  imageUrl: string;
-  name: string;
-  address: string;
-  roomType?: string; // e.g. "King size room"
-  rating?: number; // e.g. 8.5
-  reviewsCount?: number; // e.g. 436
-  facilities?: Facility[];
-
-  checkIn?: string; // "20-04-2024" (keep as string for now)
-  checkOut?: string; // "29-04-2024"
-
-  price: number; // 123450
-  totalPrice?: number; // 560000
-  nights?: number; // 10
-  currency?: string; // "NGN"
-  currencyDisplay?: "symbol" | "code" | "name";
-
-  onShowMap?: () => void;
-  onEdit?: () => void;
-  onRemove?: () => void;
-
-  className?: string;
-};
+import { HotelCardProps } from "src/app/lib/type-definations";
 
 export default function HotelCard({
   imageUrl,
