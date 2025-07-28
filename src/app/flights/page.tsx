@@ -1,4 +1,5 @@
-import { ActivityListing } from "src/app/components/cards";
+"use client";
+import FlightCard from "src/app/components/cards/FlightCard";
 
 export default function Flights() {
   return (
@@ -6,7 +7,18 @@ export default function Flights() {
       <div className="mb-4">
         <h3 className="text-lg font-bold">Flights</h3>
       </div>
-      <ActivityListing className="bg-[#c3cddc]" />
+      <FlightCard
+        isDirect
+        price={123450.0}
+        duration="1h 45m"
+        cabinTag="Premium"
+        flightNumber="AA-492"
+        airline="American Airlines"
+        onEdit={() => console.log("edit")}
+        onRemove={() => console.log("remove")}
+        depart={{ time: "08:35", date: "Sun, 7th Aug", code: "LOS" }}
+        arrive={{ time: "09:55", date: "Sun, 7th Aug", code: "SIN" }}
+      />
     </div>
   );
 }

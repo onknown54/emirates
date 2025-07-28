@@ -12,11 +12,11 @@ export default function Banner() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="mb-10">
+      <div className="mb-5">
         <div>
           <p className="text-xs">21 March 2024 - 21 April 2024</p>
-          <h3 className="text-lg font-bold">Bahamas Family Trip</h3>
-          <p className="text-sm font-bold text-black/40">
+          <h3 className="text-2xl font-bold">Bahamas Family Trip</h3>
+          <p className="text-md text-[#676E7E]">
             New York, United State of America <span>|</span> Solo Trip
           </p>
         </div>

@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { geistMono, geistSans } from "../lib/font";
+import { poppins } from "../lib/font";
 import { ChildElement } from "../lib/type-definations";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: ChildElement) {
   return (
     <html lang="en" className="h-[100vh] w-[100vw] overflow-hidden">
       <body
-        className={`bg-gray h-full w-full overflow-hidden antialiased ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-gray h-full w-full overflow-hidden antialiased ${poppins.variable}`}
       >
         <Navbar />
         <main>

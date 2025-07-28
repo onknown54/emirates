@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-wrap justify-between bg-white px-7 py-1.5 text-black/50">
+    <div className="flex flex-wrap justify-between bg-white px-7 py-1.5">
       <div className="flex items-center justify-evenly gap-2">
         <Image
           width={40}
