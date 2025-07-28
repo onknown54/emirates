@@ -6,5 +6,5 @@ export interface ChildElement {
 
 export interface Facility {
   label: string;
-  icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
