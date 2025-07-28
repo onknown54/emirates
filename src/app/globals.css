@@ -32,6 +32,11 @@ body {
   -ms-overflow-style: none;
 }
 
+.scroll-y-auto {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }

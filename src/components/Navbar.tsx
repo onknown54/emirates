@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { NavLink, Searchbar } from "../ui/navbar";
 import { NavLeftLinks, NavRightLinks } from "../lib/placeholders";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -18,26 +19,30 @@ export default function Navbar() {
       <nav className="bo flex items-center self-stretch">
         <ul className="mr-3 flex list-none items-center justify-evenly gap-1 border-r-2 border-black/40">
           {NavLeftLinks.map((itm, k) => (
-            <NavLink
-              key={k}
-              alt={itm.alt}
-              height={itm.height}
-              icon={itm.icon}
-              navTitle={itm.navTitle}
-              width={itm.width}
-            />
+            <Link key={k} href={itm.url} className="last:mr-3">
+              <NavLink
+                alt={itm.alt}
+                url={itm.url}
+                icon={itm.icon}
+                width={itm.width}
+                height={itm.height}
+                navTitle={itm.navTitle}
+              />
+            </Link>
           ))}
         </ul>
         <ul>
           {NavRightLinks.map((itm, k) => (
-            <NavLink
-              key={k}
-              alt={itm.alt}
-              height={itm.height}
-              icon={itm.icon}
-              navTitle={itm.navTitle}
-              width={itm.width}
-            />
+            <Link key={k} href={itm.url}>
+              <NavLink
+                alt={itm.alt}
+                url={itm.url}
+                icon={itm.icon}
+                width={itm.width}
+                height={itm.height}
+                navTitle={itm.navTitle}
+              />
+            </Link>
           ))}
         </ul>
       </nav>

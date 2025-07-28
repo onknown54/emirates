@@ -10,6 +10,8 @@ export default function Home() {
         <p className="text-sm">Your trip itinerires are placed here</p>
       </div>
       <ActivityListing className="bg-[#c3cddc]" />
+      <ActivityListing className="bg-[#c3cddc]" />
+      <ActivityListing className="bg-[#c3cddc]" />
     </div>
   );
 }

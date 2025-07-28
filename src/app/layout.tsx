@@ -20,7 +20,7 @@ export default function RootLayout({ children }: ChildElement) {
         <main>
           <div className="flex h-[89vh] overflow-hidden">
             <Sidebar />
-            <div className="w-full px-6 py-10">{children}</div>
+            <div className="scroll-y-auto w-full px-6 py-10">{children}</div>
           </div>
         </main>
       </body>
