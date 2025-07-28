@@ -17,8 +17,8 @@ export default function Hotels() {
           reviewsCount={436}
           roomType="King size room"
           facilities={[
-            { label: "Pool" },
-            { label: "Bar" },
+            { label: "Pool", icon: WifiIcon },
+            { label: "Bar", icon: WifiIcon },
             { label: "WiFi", icon: WifiIcon },
             { label: "Live music", icon: MusicalNoteIcon },
           ]}
