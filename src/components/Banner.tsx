@@ -6,7 +6,7 @@ export default function Banner() {
       <div className="mb-2.5 h-[15rem] w-full">
         <Image
           alt=""
-          src="/images/hero-banner.jpg"
+          src="/images/hero-banner.svg"
           width={1280}
           height={853}
           className="h-full w-full object-cover"
