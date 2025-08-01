@@ -1,36 +1,46 @@
 "use client";
-import { MusicalNoteIcon, WifiIcon } from "@heroicons/react/24/outline";
 import HotelCard from "src/app/components/cards/HotelCard";
+import { HotelListing } from "src/app/lib/placeholders";
 
 export default function Hotels() {
+  const handleEdit = () => {
+    console.log("edit");
+  };
+
+  const handleRemove = () => {
+    console.log("remove");
+  };
+
+  const handleShowOnMap = () => {
+    console.log("show on map");
+  };
+
   return (
     <div className="w-full bg-white p-6">
       <div className="mb-4">
         <h3 className="text-lg font-bold">Hotels</h3>
       </div>
       <div>
-        <HotelCard
-          imageUrl="/images/hotel.jpg"
-          name="Riviera Resort, Lekki"
-          address="18, Kenneth Agbakuru Street, Off Access Bank Admiralty Way, Lekki Phase1"
-          rating={8.5}
-          reviewsCount={436}
-          roomType="King size room"
-          facilities={[
-            { label: "Pool", icon: WifiIcon },
-            { label: "Bar", icon: WifiIcon },
-            { label: "WiFi", icon: WifiIcon },
-            { label: "Live music", icon: MusicalNoteIcon },
-          ]}
-          checkIn="20-04-2024"
-          checkOut="29-04-2024"
-          price={123450}
-          totalPrice={560000}
-          nights={10}
-          onShowMap={() => console.log("show on map")}
-          onEdit={() => console.log("edit")}
-          onRemove={() => console.log("remove")}
-        />
+        {HotelListing.map((hotel, i) => (
+          <HotelCard
+            key={i}
+            name={hotel.name}
+            rating={hotel.rating}
+            price={hotel.price}
+            onEdit={handleEdit}
+            nights={hotel.nights}
+            address={hotel.address}
+            checkIn={hotel.checkIn}
+            onRemove={handleRemove}
+            imageUrl={hotel.imageUrl}
+            checkOut={hotel.checkOut}
+            roomType={hotel.roomType}
+            onShowMap={handleShowOnMap}
+            facilities={hotel.facilities}
+            totalPrice={hotel.totalPrice}
+            reviewsCount={hotel.reviewsCount}
+          />
+        ))}
       </div>
     </div>
   );

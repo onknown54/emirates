@@ -38,12 +38,12 @@ export default function HotelCard({
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm ${className}`}
+      className={`relative w-full overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm not-last:mb-4 ${className}`}
     >
       {/* Remove button */}
       <button
         onClick={onRemove}
-        className="absolute top-2 right-2 rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+        className="absolute top-2 right-2 cursor-pointer rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
         aria-label="Remove hotel"
       >
         <XMarkIcon className="h-5 w-5" />

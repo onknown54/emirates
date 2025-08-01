@@ -17,7 +17,8 @@ export type ActivityCardProps = {
 };
 
 export interface ActivityListingProps {
-  className: string;
+  href: string;
   title: string;
+  className: string;
   children: React.ReactNode;
 }

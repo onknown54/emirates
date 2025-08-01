@@ -7,8 +7,8 @@ export default function Banner() {
         <Image
           alt=""
           src="/images/hero-banner.svg"
-          width={1280}
-          height={853}
+          width={1412}
+          height={200}
           className="h-full w-full object-cover"
         />
       </div>

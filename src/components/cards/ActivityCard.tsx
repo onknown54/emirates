@@ -35,11 +35,11 @@ export default function ActivityCard({
   }
 
   return (
-    <div className="relative flex w-full flex-col overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm">
+    <div className="relative flex w-full flex-col overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm not-last:mb-4">
       {/* Remove Button */}
       <button
         onClick={onRemove}
-        className="absolute top-2 right-2 rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+        className="absolute top-2 right-2 cursor-pointer rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
         aria-label="Remove activity"
       >
         <XMarkIcon className="h-5 w-5" />

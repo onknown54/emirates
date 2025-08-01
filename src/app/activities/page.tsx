@@ -1,28 +1,44 @@
 "use client";
 import ActivityCard from "src/app/components/cards/ActivityCard";
+import { ActivityItems } from "src/app/lib/placeholders";
 
 export default function Activites() {
+  const handleEdit = () => {
+    console.log("edit");
+  };
+
+  const handleRemove = () => {
+    console.log("remove");
+  };
+
+  const handleDirections = () => {
+    console.log("show directions");
+  };
+
   return (
     <div className="w-full bg-white p-6">
       <div className="mb-4">
         <h3 className="text-lg font-bold">Activities</h3>
       </div>
       <div>
-        <ActivityCard
-          imageUrl="/images/hotel.jpg"
-          title="The Museum of Modern Art"
-          description="Works from Van Gogh to Warhol & beyond plus a sculpture garden, 2 cafes & The modern restaurant"
-          rating={4.5}
-          reviewsCount={436}
-          duration="1 Hour"
-          included="Admission to the Empire State Building"
-          dateTime="10:30 AM on Mar 19"
-          price={123450}
-          dayTag="Day 1"
-          onDirections={() => console.log("show directions")}
-          onEdit={() => console.log("edit activity")}
-          onRemove={() => console.log("remove activity")}
-        />
+        {ActivityItems.map((activity, i) => (
+          <ActivityCard
+            key={i}
+            title={activity.title}
+            price={activity.price}
+            onEdit={handleEdit}
+            onRemove={handleRemove}
+            dayTag={activity.dayTag}
+            rating={activity.rating}
+            imageUrl={activity.imageUrl}
+            dateTime={activity.dateTime}
+            duration={activity.duration}
+            included={activity.included}
+            onDirections={handleDirections}
+            description={activity.description}
+            reviewsCount={activity.reviewsCount}
+          />
+        ))}
       </div>
     </div>
   );
